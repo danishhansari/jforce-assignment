@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Manrope:wght@200..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+.font-cursive {
+  font-family: "Covered By Your Grace", cursive;
+}
+
+input[type="date"] {
+  position: relative;
+}
+
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+input[type="date"]:before {
+  content: attr(data-placeholder);
+  color: #999;
+  display: block;
+  width: 100%;
+}
+
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+  display: none;
+}
+@layer components {
+  .navAndPage {
+    @apply max-h-screen bg-white text-black w-full p-2;
+  }
+  .btnPrimarySmall {
+    @apply bg-[#1C1C1C] text-white font-medium  rounded-full hover:bg-[#4E4E4E] transition-colors md:text-lg py-1 px-3 md:py-2 md:px-6;
+  }
+  .btnPrimary {
+    @apply bg-[#1C1C1C] text-white font-medium  rounded-full hover:bg-[#4E4E4E] transition-colors md:text-lg py-2 px-4 md:py-4 md:px-8;
+  }
+  .btnPrimarySmall {
+    @apply bg-[#1C1C1C] text-white font-medium  rounded-full hover:bg-[#4E4E4E] transition-colors md:text-lg py-1 px-2 md:py-2 md:px-4;
+  }
+  .btnSecondary {
+    @apply text-black font-medium rounded-full border bg-white hover:bg-[#f1f1f1]  border-[#eaeaea] md:text-lg transition-colors py-2 px-4 md:py-4 md:px-8;
+  }
+  .formBtn {
+    @apply py-3 w-full bg-[#1C1C1C] text-white rounded-full mt-8 font-medium text-lg hover:bg-[#4E4E4E] transition-colors;
+    @apply disabled:bg-[#1C1C1C]/30 disabled:font-semibold disabled:text-lg;
+  }
+  .headingCursive {
+    @apply font-cursive text-2xl md:text-4xl text-[#2DA950] text-center;
+  }
+  .columnFlex {
+    @apply flex flex-col items-center;
+  }
+  .whFull {
+    @apply h-full w-full;
+  }
+}
